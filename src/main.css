@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.div {
+    height: 100%;
+    overflow-x: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color:#d8c7dd;
+    background-image: url("/resource/images/waves.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+.main-content {
+    background-color: #c298cf;
+    padding: 3rem;
+    border-radius: 5%;
+    border: 0.2rem solid #000;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.main-content h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.main-content p {
+    font-size: 1rem;
+
+}
+
+.main-content img {
+    width: 6em;
+    height: 6em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    display: inline;
+}
+
+#container {
+    height: 100%;
+}
+
+.btn-about, .btn-work {
+    margin-right: 1.5em;
+}
+
+
+/*About*/
+.about {
+    background-color: #c298cf;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    overflow: scroll !important;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /*evita quebra feia em telas menores */
+    width: 85%;
+}
+  
+.about-text {
+    width: 40%;
+    margin: 5% 0;
+    color: black;
+
+    font-size: 1.1rem;
+
+    flex: 1; /* ocupa o espaço disponível */
+    min-width: 250px;
+    
+}
+
+.lang-title {
+    margin-top: 1.5rem;
+}
+
+.btn-tag-alt {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: #18181a;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-tag-alt span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.btn-tag-alt span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.btn-tag-alt:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.btn-tag-alt:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.btn-tag-alt:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+
+/*Sticky Notes*/
+.sticky-notes {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.sticky-notes p {
+    font-family: 'Reenie Beanie';
+    font-size: 1rem;
+}
+
+.sticky-notes ul,.sticky-notes li{
+    list-style:none;
+}
+
+.sticky-notes ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sticky-notes ul li a{
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:10em;
+    width:10em;
+    padding:1em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(-6deg);
+    transition: transform .15s linear;
+}
+  
+.sticky-notes  ul li:nth-child(even) a{
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+}
+  
+.sticky-notes  ul li:nth-child(3n) a{
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background:#ccf;
+}
+
+.sticky-notes  ul li:nth-child(5n) a{
+    transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+}
+  
+.sticky-notes  ul li a:hover, .sticky-notes ul li a:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+}
+  
+.sticky-notes  ul li{
+    margin:1em;
+}
+  
+  
+/*Work*/
+.work {
+    background-color:#8f7099;
+    position: absolute;
+    left: 100%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.work-content {
+    width: 70%;
+    margin-top: 1%;
+    overflow-y: scroll !important;
+}
+
+.btn-tag {
+    margin: 2px;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    color: #3D3D3D;
+    background: #fff;
+    border: none;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1) !important;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.project-title {
+    margin-top: 2.5rem;
+}
+
+.row.row-cols-1.row-cols-md-2.g-4 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row.row-cols-1.row-cols-md-2.g-4 img {
+    width: 383px;
+    height: 200px;
+}
+
+.card:hover{
+    box-shadow:5px 5px 7px rgba(0,0,0,.7);
+    transform: scale(1.05);
+    position:relative;
+    z-index:5;
+}
+
+.card a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*Back Button*/
+.btn-back {
+    position: absolute !important;
+    top: 1%;
+    left: 1%;
+
+    width: 5em;
+    height: 5em;
+    
+}
+
+.btn-back img {
+    width: 1em;
+    height: 1em; 
+}
+
+.btn-download {
+    position: fixed !important;
+    top: 85%;
+    left: 93%;
+
+    width: 5em;
+    height: 5em;
+    background-color: rgb(255, 253, 123) !important;
+
+    border-radius: 100% !important;
+}
+
